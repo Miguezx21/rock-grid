@@ -1,0 +1,146 @@
+@charset "UTF-8";
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #1D202B;
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+  /* Centrar vertical y horizontalmente */
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contenedor {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 40px 0;
+  justify-content: center;
+  /* CSS Grid principal (2 columnas: tarjetas a la izquierda, banner a la derecha) */
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 20px;
+}
+
+.titulo {
+  font-size: 24px;
+  padding: 20px 0;
+}
+
+.contenedor-conciertos {
+  /* Grid secundario (3 columnas de tarjetas) */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.card {
+  border-radius: 10px;
+  min-height: 220px;
+  font-weight: bold;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center center;
+}
+
+.card .textos {
+  height: 100%;
+  display: grid;
+  grid-template-rows: 1fr auto;
+}
+
+/* ===================================================
+   RUTAS DE IMÁGENES PARA LAS CARDS
+   =================================================== */
+.card.bg1 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../img/1.jpg");
+}
+
+.card.bg2 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../img/2.jpg");
+}
+
+.card.bg3 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../img/3.jpg");
+}
+
+.card.bg4 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../img/4.jpg");
+}
+
+.card.bg5 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../img/5.jpg");
+}
+
+.card.bg6 {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../img/6.jpg");
+}
+
+/* ===================================================
+   BANNER LATERAL Y SU IMAGEN DE FONDO
+   =================================================== */
+.banner {
+  border-radius: 10px;
+  text-align: center;
+  padding: 20px;
+  background-size: cover;
+  background-position: center center;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../img/banner.jpg");
+  /* Grid interno del banner */
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  align-items: center;
+}
+
+.banner ul {
+  list-style: none;
+  padding: 0;
+}
+
+.banner ul li {
+  margin: 15px 0;
+  font-weight: bold;
+}
+
+.banner .boton {
+  background: #FFD600;
+  color: #000;
+  display: block;
+  width: 100%;
+  font-weight: bold;
+  font-size: 14px;
+  text-align: center;
+  padding: 12px 10px;
+  border: none;
+  border-radius: 100px;
+  font-family: "Roboto", sans-serif;
+  cursor: pointer;
+}
+
+/* ===================================================
+   DISEÑO RESPONSIVO (MEDIA QUERIES)
+   =================================================== */
+@media screen and (max-width: 900px) {
+  /* El contenedor pasa a 1 sola columna y el banner cae debajo */
+  .contenedor {
+    grid-template-columns: 1fr;
+  }
+  /* Las tarjetas pasan a 2 columnas */
+  .contenedor-conciertos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 700px) {
+  /* Las tarjetas pasan a 1 columna */
+  .contenedor-conciertos {
+    grid-template-columns: 1fr;
+  }
+}/*# sourceMappingURL=estilos.css.map */
